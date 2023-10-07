@@ -44,17 +44,21 @@ const NavBar = () => {
           </ul>
         </div>
         <a
-          className="btn btn-ghost normal-case text-[#4ff965] text-4xl greatVibes"
+          className="btn btn-ghost normal-case text-primary text-4xl greatVibes"
           id="logo"
         >
           GameOn Gala
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1 font-medium">{links}</ul>
+        <ul className="menu menu-horizontal px-1 font-medium text-primary">
+          {links}
+        </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn">Login</a>
+        <Link to="/login">
+          <a className="btn btn-primary">Login</a>
+        </Link>
       </div>
     </div>
   );
