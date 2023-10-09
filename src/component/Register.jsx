@@ -8,8 +8,16 @@ import "react-toastify/dist/ReactToastify.css";
 import { updateProfile } from "firebase/auth";
 
 const Register = () => {
-  const { createUser } = useContext(AuthContext);
+  const { createUser, googleSignIn } = useContext(AuthContext);
   const navigate = useNavigate();
+  const googleLogin = () => {
+    googleSignIn()
+      .then(() => {
+        toast.success("Logged in successfully");
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch();
+  };
   const handleRegister = (e) => {
     e.preventDefault();
     const form = new FormData(e.currentTarget);
@@ -96,7 +104,7 @@ const Register = () => {
             <div className="form-control mt-2">
               <button className="btn btn-primary">Sign Up</button>
             </div>
-            <p className="w-full btn text-red-500">
+            <p onClick={googleLogin} className="w-full btn text-red-500">
               <BsGoogle className="text-xl mr-1"></BsGoogle>Login with Google
             </p>
             <p>

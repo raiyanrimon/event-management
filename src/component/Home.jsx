@@ -4,6 +4,8 @@ import { useLoaderData } from "react-router-dom";
 import EventCard from "./EventCard";
 import Banner from "./Banner";
 import { useEffect } from "react";
+import WhyUs from "./WhyUs";
+import JoinUs from "./JoinUs";
 
 const Home = () => {
   const eventData = useLoaderData();
@@ -12,7 +14,7 @@ const Home = () => {
   }, []);
 
   return (
-    <>
+    <div className="space-y-8">
       <Banner></Banner>
       <div
         className="text-center text-4xl font-bold my-5 text-primary-focus "
@@ -28,7 +30,9 @@ const Home = () => {
           <EventCard key={event.id} event={event}></EventCard>
         ))}
       </div>
-    </>
+      <WhyUs></WhyUs>
+      <JoinUs></JoinUs>
+    </div>
   );
 };
 

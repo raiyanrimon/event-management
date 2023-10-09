@@ -19,16 +19,14 @@ const NavBar = () => {
       <li>
         <NavLink to="/service">Services</NavLink>
       </li>
-      <li>
-        <NavLink to="/contact">Contact Us</NavLink>
-      </li>
+
       {user && (
         <>
           <li>
             <NavLink to="/profile">Profile</NavLink>
           </li>
           <li>
-            <NavLink to="/dashboard">Dashboards</NavLink>
+            <NavLink to="/contact">Contact Us</NavLink>
           </li>
         </>
       )}
@@ -76,9 +74,16 @@ const NavBar = () => {
       <div className="navbar-end">
         {user ? (
           <>
-            <div className="flex mr-2">
+            <div className="md:hidden w-24 ml-5">
+              <h3 className="font-medium ml-5">{user.displayName}</h3>
+              <img className="avatar rounded-full" src={user.photoURL} alt="" />
+              <button onClick={handleSignOut} className="btn btn-primary">
+                Sign Out
+              </button>
+            </div>
+            <div className="md:flex items-center space-x-2 hidden md:visible ">
               {" "}
-              <h3 className="flex items-center font-semibold text-base mr-3">
+              <h3 className="flex items-center font-semibold text-base ">
                 {" "}
                 {user.displayName}
               </h3>
@@ -87,10 +92,10 @@ const NavBar = () => {
                   <img src={user.photoURL} />
                 </div>
               </div>
+              <button onClick={handleSignOut} className="btn btn-primary">
+                Sign Out
+              </button>
             </div>
-            <button onClick={handleSignOut} className="btn btn-primary">
-              Sign Out
-            </button>
           </>
         ) : (
           <Link to="/login">

@@ -1,8 +1,15 @@
 import { Link } from "react-router-dom";
+import Aos from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Banner = () => {
+  useEffect(() => {
+    Aos.init();
+  }, []);
   return (
     <div
+      data-aos="flip-up"
       className="hero min-h-screen"
       style={{
         backgroundImage:
