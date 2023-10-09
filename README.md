@@ -1,5 +1,5 @@
-Website Name:
-Live Link:
+Website Name: GameOn Gala
+Live Link: https://gameon-gala.web.app
 
 Features of this projects:
 
