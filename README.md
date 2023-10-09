@@ -8,3 +8,6 @@ Features of this projects:
 - Aos Package Implemented
 - React Toastify added
 - Private Route
+- hero banner
+- header & footer
+- why choose us section
