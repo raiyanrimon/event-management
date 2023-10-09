@@ -14,7 +14,10 @@ const Home = () => {
   return (
     <>
       <Banner></Banner>
-      <div className="text-center text-4xl font-bold my-5 " data-aos="zoom-in">
+      <div
+        className="text-center text-4xl font-bold my-5 text-primary-focus "
+        data-aos="zoom-in"
+      >
         Our Services
       </div>
       <div
